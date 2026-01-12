@@ -1,0 +1,37 @@
+model:
+  vocab_size: 32000
+  context_length: 512
+  num_layers: 6
+  d_model: 512
+  num_heads: 8
+  d_ff: 1344 # 8/3 * d_model for swiglu
+  theta: 10000.0
+
+optimizer:
+  lr_max: 0.01
+  lr_min: null
+  warmup_iters: null
+  max_l2_norm: 1.0
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  eps: 1e-8
+
+training:
+  batch_size: 128
+  seed: 42
+  max_iters: null
+  log_interval: 10
+  eval_interval: 500
+  eval_iters: 200
+  resume_from: null # Path to a checkpoint `.pt` to resume from
+  out_dir: outputs
+  save_ckpt: false # Whether to save checkpoints during training
+  n_procs: 4
+  run_name: openwebtext-transformer-lm
+
+checkpoint:
+  save_path: checkpoints/openwebtext
+
+data:
+  path: data/openwebtext # Directory containing train.bin and val.bin
+  tokenizer_path: hf_tokenizer/openwebtext-32k/tokenizer.json
