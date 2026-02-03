@@ -118,7 +118,7 @@ def main(cfg: DictConfig):
 
     # 只在主进程（rank 0）初始化wandb日志记录
     if rank == 0:
-        wandb.login(key="ce0521d2e513e642494e70096e7606178ecd2158")
+        wandb.login(key=os.getenv("WANDB_API_KEY"))
         logger = wandb.init(
             entity="cwc7", 
             project="cs336-basics", 

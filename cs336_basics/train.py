@@ -17,7 +17,7 @@ from cs336_basics.training.dataloader import get_batch, load_checkpoint, save_ch
 from cs336_basics.training.optimizers import cross_entropy_loss, AdamW, cosine_learning_rate_schedule, gradient_clipping
 
 # logger
-wandb.login(key="ce0521d2e513e642494e70096e7606178ecd2158")
+wandb.login(key=os.getenv("WANDB_API_KEY"))
 logger = wandb.init(
     entity="cwc7", 
     project="cs336-basics", 
