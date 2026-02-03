@@ -48,3 +48,5 @@ gunzip owt_valid.txt.gz
 cd ..
 ```
 
+### Encode Dataset
+ - I refer to [this repo](https://github.com/donglinkang2021/cs336-assignment1-basics/tree/main) to train a tokenizer (using the tokenizers library from huggingface) for encodeing the pretraining dataset. Because my self-implemented tokenizer is very slow without any optimizing. 
